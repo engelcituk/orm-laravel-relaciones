@@ -8,6 +8,9 @@ class Profile extends Model
 {
     public  function location() 
     {
-        return hasOne(Location::class);
+        return $this->hasOne(Location::class);
     }
 }
+
+
+

@@ -38,9 +38,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public  function profile() //en singular porque un usuario solo tiene un perfil
+    public function profile()
     {
-        return hasOne(Propile::class);
+        return $this->hasOne(Profile::class);
     }
 
     public  function level() 
@@ -48,11 +48,11 @@ class User extends Authenticatable
         return belongsTo(Level::class);
     }
 
-    public  function groups() 
+   
+    public function groups()
     {
-        return belongsToMany(Group::class)->withTimestamps();
+        return $this->belongsToMany(Group::class)->withTimestamps();
     }
-
     public  function location() //singular porque un usuario solo tiene una localizacion 
     {
         return hasOneThrough(Location::class, Propile::class);

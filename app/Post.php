@@ -21,7 +21,7 @@ class Post extends Model
         return $this->morphMany(Comment::class, 'commentable');
 
     }
-    public function images(){
+    public function image(){
 
         return $this->morphOne(Image::class, 'imageable');
         
