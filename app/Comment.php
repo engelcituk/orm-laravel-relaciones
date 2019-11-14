@@ -8,10 +8,10 @@ class Comment extends Model
 {
     public  function commentable() {
 
-        return morpTo();
+        return $this->morpTo();
     }
     public  function user() {
 
-        return belongsTo(User::class);
+        return $this->belongsTo(User::class);
     }
 }

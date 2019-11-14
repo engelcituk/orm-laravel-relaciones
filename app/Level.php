@@ -9,12 +9,12 @@ class Level extends Model
 {
     public  function users() //un nivel tiene muchos usuarios
     {
-        return hasMany(User::class);
+        return $this->hasMany(User::class);
     }
     public  function posts(){
-        return hasManyThrough(Post::class, User::class);
+        return $this->hasManyThrough(Post::class, User::class);
     }
     public  function videos(){
-        return hasManyThrough(Video::class, User::class);
+        return $this->hasManyThrough(Video::class, User::class);
     }
 }

@@ -8,6 +8,6 @@ class Image extends Model
 {
     public  function imageable() {
 
-        return morpTo();
+        return $this->morpTo();
     }
 }

@@ -8,6 +8,6 @@ class Group extends Model
 {
     public  function users() 
     {
-        return belongsToMany(User::class)->withTimestamps();
+        return $this->belongsToMany(User::class)->withTimestamps();
     }
 }

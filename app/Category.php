@@ -8,10 +8,10 @@ class Category extends Model
 {
     public  function posts() 
     {
-        return hasMany(Post::class);
+        return $this->hasMany(Post::class);
     }
     public  function videos() 
     {
-        return hasMany(Video::class);
+        return $this->hasMany(Video::class);
     }
 }

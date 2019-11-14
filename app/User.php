@@ -45,7 +45,7 @@ class User extends Authenticatable
 
     public  function level() 
     {
-        return belongsTo(Level::class);
+        return $this->belongsTo(Level::class);
     }
 
    
@@ -55,19 +55,19 @@ class User extends Authenticatable
     }
     public  function location() //singular porque un usuario solo tiene una localizacion 
     {
-        return hasOneThrough(Location::class, Propile::class);
+        return $this->hasOneThrough(Location::class, Profile::class);
     }
     public  function posts() //un usuario tiene nuchos posts
     {
-        return hasMany(Post::class);
+        return $this->hasMany(Post::class);
     }
     public  function videos() //un usuario tiene nuchos videos
     {
-        return hasMany(Video::class);
+        return $this->hasMany(Video::class);
     }
     public  function comments() //un usuario tiene nuchos comentarios
     {
-        return hasMany(Comment::class);
+        return $this->hasMany(Comment::class);
     }
     public function image(){
 
